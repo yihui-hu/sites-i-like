@@ -9,13 +9,24 @@ function Home(props) {
 
   return (
     <div className="container">
-      <div className="navbar">
+      <motion.div 
+        className="navbar"
+        initial={{ y: "30px", opacity: 0}}
+        animate={{ y: "0px", opacity: 1}}
+        transition={{ duration: 0.7, type: "spring" }}
+      >
         <h2>Sites I Like</h2>
-      </div>
+      </motion.div>
       <div className="flex-container">
-      {sites.map((site) => {
+      {sites.map((site, i) => {
         return (
-          <div className="flex-box" key={site.name}>
+          <motion.div 
+            className="flex-box" 
+            key={site.name}
+            initial={{ y: "30px", opacity: 0}}
+            animate={{ y: "0px", opacity: 1}}
+            transition={{ duration: 0.7, type: "spring", delay: i * 0.1}}
+          >
             <a href={site.name} target="_blank" rel="noreferrer">
               <motion.img 
                 src={site.image}
@@ -29,7 +40,7 @@ function Home(props) {
                 {new Date(site.date).toLocaleDateString(undefined, {month: 'long', day: 'numeric', year: 'numeric'})}
               </h3> */}
             </div>
-          </div>
+          </motion.div>
         );
       })}
       </div>
