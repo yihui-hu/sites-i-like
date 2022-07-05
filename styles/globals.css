@@ -86,13 +86,6 @@ select {
   background: black;
 }
 
-a {
-  color: inherit;
-  text-decoration: underline !important;
-  font-weight: normal;
-  letter-spacing: 0px;
-}
-
 #light .container {
   color: rgb(18, 18, 18);
   background-color: #f3f3f3;
@@ -441,13 +434,18 @@ a {
 .site-header-date {
   color: grey;
   font-weight: 400;
-} 
+}
 
 a {
   color: inherit;
+  font-size: inherit;
   text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+.modal > h2 > a {
+  text-decoration: underline !important;
 }
 
 a:hover {
