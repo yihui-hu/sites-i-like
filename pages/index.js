@@ -105,9 +105,7 @@ function Home(props) {
                 boxShadow: "rgba(116, 116, 116, 0.15) 0px 48px 100px 0px",
               }}
             >
-              <h2>
-                <InfoLg />
-              </h2>
+              <InfoLg style={{fontSize: "25px"}}/>
             </motion.div>
           </motion.div>
           <div className="flex-container">
