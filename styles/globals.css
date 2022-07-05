@@ -106,7 +106,7 @@ select {
   
     background-color: white;
     box-shadow: rgba(116, 116, 116, 0.15) 0px 48px 100px 0px;
-    border: 0.5px solid rgba(128, 128, 128, 0.5);
+    border: 1px solid rgb(224, 224, 224);
     
     position: sticky;
     top: 30px;
@@ -160,7 +160,7 @@ select {
   
     background-color: white;
     box-shadow: rgba(116, 116, 116, 0.15) 0px 48px 100px 0px;
-    border: 0.5px solid rgba(128, 128, 128, 0.5);
+    border: 1px solid rgb(224, 224, 224);
     
     position: sticky;
     top: 40px;
@@ -210,4 +210,8 @@ a {
 
 a:hover {
   color: grey;
+}
+
+img {
+  border: 1px solid rgb(224, 224, 224);
 }
