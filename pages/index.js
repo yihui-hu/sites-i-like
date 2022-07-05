@@ -1,21 +1,66 @@
 // index page
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { createContext, React, useState } from "react"
+import { InfoLg, BrightnessHighFill, MoonStarsFill } from 'react-bootstrap-icons';
+
+export const ThemeContext = createContext(null);
 
 function Home(props) {
-  console.log(props);
-
   let sites = props.records;
 
+  const [theme, setTheme] = useState("light");
+
+  function toggleTheme() {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
+
+  const [isModalShown, setIsModalShown] = useState(false);
+
+  function toggleModalShown() {
+    setIsModalShown(!isModalShown)
+  }
+
   return (
+    <ThemeContext.Provider value={{theme, setTheme}}>
+    <div id={theme}>
     <div className="container">
-      <motion.div 
-        className="navbar"
+      {theme === "dark" && <div className="shade"></div>}
+      <AnimatePresence exitBeforeEnter>
+      {isModalShown && 
+        <motion.div className="modal"
+        key="modal"
+        initial={{ y: "-30px", opacity: 0}}
+        animate={{ y: "0px", opacity: 1}}
+        exit={{ y: "-30px", opacity: 0}}
+        transition={{ duration: 0.7, type: "spring" }}
+        >
+          <h1>About</h1>
+          <hr></hr>
+          <h2>This site hosts a collection of my favourite sites in both content and design. Read more about it here.</h2>
+          <h1>Colophon</h1>
+          <hr></hr>
+          <h2>Built with Next.js and Framer Motion, with AirTable for backend API calls.</h2>
+          <h1>Contact</h1>
+          <hr></hr>
+          <h2>If you want to chat, or have your featured site removed, let me know on <a href="https://twitter.com/_yihui">Twitter</a> or via email at yyihui.hu @ gmail.com.</h2>
+        </motion.div>}
+        </AnimatePresence>
+      <motion.div className="header"
         initial={{ y: "30px", opacity: 0}}
         animate={{ y: "0px", opacity: 1}}
         transition={{ duration: 0.7, type: "spring" }}
       >
-        <h2>Sites I Like</h2>
+        <div className="circle" onClick={toggleTheme}>
+          {theme === "dark" && <h2><BrightnessHighFill/></h2>} 
+          {theme === "light" && <h2><MoonStarsFill/></h2>}
+        </div>
+        <div className="navbar">
+          <h2>Sites I Like</h2>
+        </div>
+        <div className="circle" onClick={toggleModalShown}>
+          <h2><InfoLg /></h2>
+        </div>
       </motion.div>
       <div className="flex-container">
       {sites.map((site, i) => {
@@ -36,9 +81,6 @@ function Home(props) {
             </a>
             <div className="site-header">
               <a className="site-header-name" href={site.name} target="_blank" rel="noreferrer">{site.name}</a>
-              {/* <h3 className="site-header-date">
-                {new Date(site.date).toLocaleDateString(undefined, {month: 'long', day: 'numeric', year: 'numeric'})}
-              </h3> */}
             </div>
           </motion.div>
         );
@@ -49,6 +91,8 @@ function Home(props) {
         <h2>All sites and images featured are © their respective owners.</h2>
       </div>
     </div>
+    </div>
+    </ThemeContext.Provider>
   );
 }
 
