@@ -25,14 +25,16 @@ function Home(props) {
             </a>
             <div className="site-header">
               <a className="site-header-name" href={site.name} target="_blank" rel="noreferrer">{site.name}</a>
-              <h3 className="site-header-date">{new Date(site.date).toLocaleDateString(undefined, {month: 'long', day: 'numeric', year: 'numeric'})}</h3>
+              {/* <h3 className="site-header-date">
+                {new Date(site.date).toLocaleDateString(undefined, {month: 'long', day: 'numeric', year: 'numeric'})}
+              </h3> */}
             </div>
           </div>
         );
       })}
       </div>
       <div className="footer">
-        <h2>© 2022 / Hu Yihui.</h2>
+        <h2>© 2022 / Hu Yihui</h2>
         <h2>All sites and images featured are © their respective owners.</h2>
       </div>
     </div>
