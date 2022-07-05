@@ -119,7 +119,7 @@ a {
     position: sticky;
     top: 30px;
     z-index: 9999;
-    margin-inline: 25px;
+    margin-inline: calc((100vw - 50vw - 75px) / 2);
     margin-bottom: 100px;
   }
 
@@ -284,7 +284,7 @@ a {
     position: sticky;
     top: 40px;
     z-index: 9999;
-    margin-inline: 25vw;
+    margin-inline: calc((100vw - 30vw - 105px) / 2);
     margin-bottom: 150px;
   }
 

@@ -67,7 +67,7 @@ function Home(props) {
             animate={{ y: "0px", opacity: 1 }}
             transition={{ duration: 0.7, type: "spring" }}
           >
-            <motion.div
+            {/* <motion.div
               className="circle"
               onClick={toggleTheme}
               whileHover={{
@@ -89,7 +89,7 @@ function Home(props) {
                   <MoonStarsFill />
                 </h2>
               )}
-            </motion.div>
+            </motion.div> */}
             <div className="navbar">
               <h2>Sites I Like</h2>
             </div>
