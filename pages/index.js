@@ -54,8 +54,8 @@ function Home(props) {
                 <h1>Contact</h1>
                 <hr></hr>
                 <h2>
-                  If you want to chat, or have your featured site removed, let
-                  me know on <a href="https://twitter.com/_yihui">Twitter</a> or
+                  If you want to chat, or have your featured site removed, I'm available
+                  on <a href="https://twitter.com/_yihui">Twitter</a> or
                   via email at yyihui.hu @ gmail.com.
                 </h2>
               </motion.div>
