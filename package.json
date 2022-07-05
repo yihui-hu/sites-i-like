@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "airtable": "^0.11.4",
+    "dotenv": "^16.0.1",
+    "framer-motion": "^6.3.16",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
