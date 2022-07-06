@@ -165,7 +165,7 @@ export async function getServerSideProps() {
   );
   const table = base("Sites");
   let records = await table
-    .select({ sort: [{ field: "Date", direction: "desc" }] })
+    .select({ sort: [{ field: "Created", direction: "desc" }] })
     .all();
 
   records = await Promise.all(

@@ -431,7 +431,7 @@ select {
 }
 
 .site-header-date {
-  color: grey;
+  color: rgb(177, 177, 177);
   font-weight: 400;
 }
 
