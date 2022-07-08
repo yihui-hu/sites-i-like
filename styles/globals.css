@@ -412,7 +412,6 @@ select {
 
   #light .modal > hr {
     margin-inline: 25px;
-    margin-bottom: 10px;
     border: 0.5px solid rgb(215, 215, 215);
   }
 

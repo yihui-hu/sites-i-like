@@ -43,7 +43,7 @@ function Home(props) {
                 <hr></hr>
                 <h2>
                   This site hosts a collection of my favourite sites in both
-                  content and design. Read more about it here.
+                  content and design. Read more about it here (coming soon).
                 </h2>
                 <h1>Colophon</h1>
                 <hr></hr>
