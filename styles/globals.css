@@ -267,7 +267,7 @@ select {
   }
   
   .flex-box {
-    flex: 0 1 calc((100vw - 100px) / 3);
+    flex: 1 1 calc((100vw - 100px) / 3);
   }
 
   .header {

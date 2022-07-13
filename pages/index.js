@@ -141,6 +141,7 @@ function Home(props) {
                     >
                       {site.name}
                     </a>
+                    {/* <h2 className="site-header-date">{site.date}</h2> */}
                   </div>
                 </motion.div>
               );
