@@ -27,7 +27,7 @@ function Home(props) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div id={theme}>
+      <div id={theme} className="parent">
         <div className="container">
           <AnimatePresence exitBeforeEnter>
             {isModalShown && (
