@@ -7,6 +7,7 @@ import {
   BrightnessHighFill,
   MoonStarsFill,
 } from "react-bootstrap-icons";
+import Head from "next/head";
 
 export const ThemeContext = createContext(null);
 
@@ -27,6 +28,9 @@ function Home(props) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Head>
+        <title>sites-i-like</title>
+      </Head>
       <div id={theme} className="parent">
         <div className="container">
           <AnimatePresence exitBeforeEnter>
@@ -54,7 +58,10 @@ function Home(props) {
                 <h1>Contact</h1>
                 <hr></hr>
                 <h2>
-                  If you want to chat, or have your featured site removed, I&apos;m available on <a href="https://twitter.com/_yihui">Twitter</a> or via email at yyihui.hu @ gmail.com.
+                  If you want to chat, or have your featured site removed,
+                  I&apos;m available on{" "}
+                  <a href="https://twitter.com/_yihui">Twitter</a> or via email
+                  at yyihui.hu @ gmail.com.
                 </h2>
               </motion.div>
             )}
@@ -103,7 +110,7 @@ function Home(props) {
                 boxShadow: "rgba(116, 116, 116, 0.15) 0px 48px 100px 0px",
               }}
             >
-              <InfoLg style={{fontSize: "25px"}}/>
+              <InfoLg style={{ fontSize: "25px" }} />
             </motion.div>
           </motion.div>
           <div className="flex-container">
