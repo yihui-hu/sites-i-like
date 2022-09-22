@@ -1,5 +1,3 @@
-// index page
-
 import { motion, AnimatePresence } from "framer-motion";
 import { createContext, React, useState } from "react";
 import {
@@ -14,11 +12,11 @@ export const ThemeContext = createContext(null);
 function Home(props) {
   let sites = props.records;
 
-  const [theme, setTheme] = useState("light");
-
-  function toggleTheme() {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"));
-  }
+  // DARK MODE IMPLEMENTATION - INCOMPLETE
+  // const [theme, setTheme] = useState("light");
+  // function toggleTheme() {
+  //   setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  // }
 
   const [isModalShown, setIsModalShown] = useState(false);
 
@@ -27,11 +25,13 @@ function Home(props) {
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    // <ThemeContext.Provider value={{ theme, setTheme }}>
+    <div>
       <Head>
         <title>sites-i-like</title>
       </Head>
-      <div id={theme} className="parent">
+      {/* change div id here to {theme} to toggle between light/dark mode */}
+      <div id="light" className="parent">
         <div className="container">
           <AnimatePresence exitBeforeEnter>
             {isModalShown && (
@@ -72,6 +72,7 @@ function Home(props) {
             animate={{ y: "0px", opacity: 1 }}
             transition={{ duration: 0.7, type: "spring" }}
           >
+            {/* DARK MODE IMPLEMENTATION - INCOMPLETE */}
             {/* <motion.div
               className="circle"
               onClick={toggleTheme}
@@ -162,7 +163,8 @@ function Home(props) {
           </div>
         </div>
       </div>
-    </ThemeContext.Provider>
+    </div>
+    // </ThemeContext.Provider>
   );
 }
 
